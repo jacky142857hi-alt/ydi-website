@@ -1,0 +1,79 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ═══════════════════════════════════════════════════════
+   YDI 长三角汽车科创学院 — 品牌色彩体系
+   主色调：科创蓝 #1F91C9 (70%)
+   辅助色：暖心橙 #ED7D31 (30%)
+   深色底：深蓝 #012F84
+   中性色：白 #FFFFFF / 浅灰 #F5F7FA / 深灰 #1A1A2E
+   ═══════════════════════════════════════════════════════ */
+
+@theme inline {
+  --color-brand-blue: #1F91C9;
+  --color-brand-orange: #ED7D31;
+  --color-brand-deep: #012F84;
+  --color-surface-light: #F5F7FA;
+  --color-surface-white: #FFFFFF;
+  --color-text-primary: #1A1A2E;
+  --color-text-secondary: #5A5A72;
+  --color-text-muted: #8E8EA0;
+  --color-border-subtle: oklch(0 0 0 / 0.08);
+
+  --font-sans: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Code", monospace;
+
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+}
+
+:root {
+  --background: #FFFFFF;
+  --foreground: #1A1A2E;
+  --brand: #1F91C9;
+  --brand-foreground: #FFFFFF;
+  --accent: #ED7D31;
+  --accent-foreground: #FFFFFF;
+  --muted: #F5F7FA;
+  --muted-foreground: #8E8EA0;
+  --color-ring: #1F91C9;
+
+  --color-primary: #1F91C9;
+  --color-primary-foreground: #FFFFFF;
+  --color-secondary: #F5F7FA;
+  --color-secondary-foreground: #1A1A2E;
+  --color-destructive: #DC2626;
+  --color-border: oklch(0 0 0 / 0.1);
+  --color-input: oklch(0 0 0 / 0.1);
+}
+
+@layer base {
+  * { box-sizing: border-box; }
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { display: block; max-width: 100%; height: auto; }
+  a { text-decoration: none; color: inherit; }
+}
+
+/* Gradient utilities */
+.bg-gradient-brand {
+  background: linear-gradient(135deg, #012F84 0%, #1F91C9 50%, #0D6BA0 100%);
+}
+.text-gradient-brand {
+  background: linear-gradient(135deg, #1F91C9, #012F84);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
